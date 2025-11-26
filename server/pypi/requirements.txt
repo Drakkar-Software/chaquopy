@@ -1,6 +1,6 @@
 # Direct requirements
 build==0.10.0
-Jinja2==2.11.3
+Jinja2==3.1.6
 jsonschema==2.6.0
 pyelftools==0.29
 pypi-simple==1.1.0
