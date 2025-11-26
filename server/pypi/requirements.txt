@@ -20,7 +20,7 @@ MarkupSafe==2.0.1
 packaging==23.1
 pydantic==1.10.12
 pyproject_hooks==1.0.0
-requests==2.31.0
+requests==2.32.4
 soupsieve==2.4.1
 tomli==2.0.1; python_version < "3.11"
 typing-extensions==4.7.1
