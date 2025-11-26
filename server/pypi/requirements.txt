@@ -12,7 +12,7 @@ wheel==0.33.6
 # Indirect requirements
 attrs==23.1.0
 beautifulsoup4==4.12.2
-certifi==2023.7.22
+certifi==2024.7.4
 charset-normalizer==3.2.0
 idna==3.4
 mailbits==0.2.1
