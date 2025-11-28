@@ -352,7 +352,12 @@ class BuildWheel:
                 run(f"git -C {temp_dir} checkout {git_rev}")
                 run(f"git -C {temp_dir} submodule update --init --recursive")
 
-            run(f"tar -c -C {temp_dir} . -z -f {tgz_filename}")
+            if sys.platform == 'darwin':
+                # macOS (BSD tar) requires -f to come immediately before the filename
+                run(f"tar -czf {tgz_filename} -C {temp_dir} .")
+            else:
+                # Linux (GNU tar) accepts the original format
+                run(f"tar -c -C {temp_dir} . -z -f {tgz_filename}")
             run(f"rm -rf {temp_dir}")
 
         return tgz_filename

@@ -1,0 +1,13 @@
+package:
+  name: OctoBot-Tulipy
+  version: 0.4.10
+
+requirements:
+  build:
+    - cython 0.29.34
+  host:
+    - python
+
+source:
+  git_url: https://github.com/Drakkar-Software/tulipy.git
+  git_rev: master
