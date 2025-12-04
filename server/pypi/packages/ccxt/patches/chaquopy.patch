@@ -1,0 +1,34 @@
+--- src-original/setup.py	1970-01-01 00:00:00.000000000 +0000
++++ src/setup.py	2024-01-01 00:00:00.000000000 +0000
+@@ -12,7 +12,11 @@
+ here = path.abspath(path.dirname(__file__))
+ root = path.dirname(here)
+ 
+-readme = path.join(here, 'README.md')
++# Chaquopy: use README.rst instead of README.md (the actual file in the package)
++readme = path.join(here, 'README.rst')
++if not path.isfile(readme):
++    readme = path.join(here, 'README.md')
++
+ package_json = path.join(here, 'package.json')
+ 
+ # a workaround when installing locally from git repository with pip install -e .
+@@ -80,12 +84,14 @@
+     extras_require={
+         ':python_version>="3.5.2"': [
+             'aiohttp>=3.10.11',
+-            'aiodns>=1.1.1',
++            # Chaquopy: removed aiodns
++            # 'aiodns>=1.1.1',
+             'yarl>=1.7.2',
+         ],
+-        ':python_version>="3.9" and python_version<="3.13"': [
+-            'coincurve==21.0.0',
+-        ],
++        # Chaquopy: removed coincurve
++        # ':python_version>="3.9" and python_version<="3.13"': [
++        #     'coincurve==21.0.0',
++        # ],
+         'qa': [
+             'ruff==0.0.292',
+             'tox>=4.8.0',
