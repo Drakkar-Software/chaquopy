@@ -24,4 +24,4 @@ requests==2.31.0
 soupsieve==2.4.1
 tomli==2.0.1; python_version < "3.11"
 typing-extensions==4.7.1
-urllib3==2.0.4
+urllib3==2.6.0
